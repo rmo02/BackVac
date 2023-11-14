@@ -1,5 +1,6 @@
 package com.zup.desafio.controledevacinasapp.DTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.zup.desafio.controledevacinasapp.entity.Usuario;
 import com.zup.desafio.controledevacinasapp.entity.Vacina;
 
@@ -18,6 +19,7 @@ public class VacinaDTO {
     private String nomeVacina;
 
     @NotNull(message = "Data de vacinação não pode ser nula")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate dataVacinacao;
 
     @NotNull(message = "Id do médico não pode ser nulo")

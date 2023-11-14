@@ -1,5 +1,6 @@
 package com.zup.desafio.controledevacinasapp.DTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.zup.desafio.controledevacinasapp.entity.Responsavel;
 import com.zup.desafio.controledevacinasapp.entity.Usuario;
 import org.hibernate.validator.constraints.br.CPF;
@@ -30,6 +31,7 @@ public class UsuarioDTO {
     private String CPF;
 
     @NotNull
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate dataNascimento;
 
     public UsuarioDTO() {}
