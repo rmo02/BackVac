@@ -11,9 +11,8 @@ import java.time.LocalDate;
 
 public class VacinaDTO {
 
-    @NotBlank(message = "Email não pode estar em branco")
-    @Email(message = "Email deve ser válido")
-    private String email;
+    @NotBlank(message = "CPF não pode estar em branco")
+    private String CPF;
 
     @NotBlank(message = "Nome da vacina não pode estar em branco")
     private String nomeVacina;
@@ -31,8 +30,8 @@ public class VacinaDTO {
 
     public VacinaDTO() {}
 
-    public VacinaDTO(String email, String nomeVacina, LocalDate dataVacinacao, Long medicoId, boolean aplicado, Long usuarioId) {
-        this.email = email;
+    public VacinaDTO(String CPF, String nomeVacina, LocalDate dataVacinacao, Long medicoId, boolean aplicado, Long usuarioId) {
+        this.CPF = CPF;
         this.nomeVacina = nomeVacina;
         this.dataVacinacao = dataVacinacao;
         this.medicoId = medicoId;
@@ -42,12 +41,12 @@ public class VacinaDTO {
 
     // Getters e Setters
 
-    public String getEmail() {
-        return email;
+    public String getCPF() {
+        return CPF;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
     }
 
     public String getNomeVacina() {
@@ -92,7 +91,7 @@ public class VacinaDTO {
 
     public Vacina dtoParaVacina() {
         Vacina vacina = new Vacina();
-        vacina.setEmail(email);
+        vacina.setCPF(CPF);
         vacina.setNomeVacina(nomeVacina);
         vacina.setDataVacinacao(dataVacinacao);
         vacina.setAplicado(aplicado);

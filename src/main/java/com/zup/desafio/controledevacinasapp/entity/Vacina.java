@@ -1,6 +1,5 @@
 package com.zup.desafio.controledevacinasapp.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -15,8 +14,8 @@ public class Vacina {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email_usuario", nullable = false)
-    private String email;
+    @Column(name = "CPF_usuario", nullable = false)
+    private String CPF;
 
     @Column(nullable = false)
     private String nomeVacina;
@@ -40,9 +39,9 @@ public class Vacina {
     }
 
     // Construtor com todos os atributos
-    public Vacina(Long id, String email, String nomeVacina, LocalDate dataVacinacao, Medico medico, Usuario usuario, boolean aplicado) {
+    public Vacina(Long id, String CPF, String nomeVacina, LocalDate dataVacinacao, Medico medico, Usuario usuario, boolean aplicado) {
         this.id = id;
-        this.email = email;
+        this.CPF = CPF;
         this.nomeVacina = nomeVacina;
         this.dataVacinacao = dataVacinacao;
         this.medico = medico;
@@ -60,12 +59,12 @@ public class Vacina {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCPF() {
+        return CPF;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
     }
 
     public String getNomeVacina() {

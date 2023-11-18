@@ -36,7 +36,7 @@ public class VacinaService {
             vacina.setMedico(medico);
             vacina.setAplicado(true);
 
-            Usuario usuario = usuarioRepository.findByEmail(vacina.getEmail());
+            Usuario usuario = usuarioRepository.findByCPF(vacina.getCPF());
 
             if (usuario != null) {
                 vacina.setUsuario(usuario);

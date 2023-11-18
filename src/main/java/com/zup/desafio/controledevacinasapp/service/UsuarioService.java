@@ -54,7 +54,7 @@ public class UsuarioService {
             Usuario atualizarUsuario = usuarioOptional.get();
             atualizarUsuario.setNome(usuario.getNome());
             atualizarUsuario.setCPF(usuario.getCPF());
-            atualizarUsuario.setEmail(usuario.getEmail());
+            atualizarUsuario.setNumTelefone(usuario.getNumTelefone());
             atualizarUsuario.setDataNascimento(usuario.getDataNascimento());
             return usuarioRepository.save(atualizarUsuario);
         } else {

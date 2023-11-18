@@ -19,8 +19,8 @@ public class Usuario {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, unique = true)
-    private String email;
+    @Column(nullable = false)
+    private String numTelefone;
 
     @Column(nullable = false, unique = true)
     private String CPF;
@@ -40,10 +40,10 @@ public class Usuario {
     }
 
     // Construtor com todos os atributos
-    public Usuario(Long id, String nome, String email, String CPF, LocalDate dataNascimento, Responsavel responsavel, List<Vacina> vacinas) {
+    public Usuario(Long id, String nome, String numTelefone, String CPF, LocalDate dataNascimento, Responsavel responsavel, List<Vacina> vacinas) {
         this.id = id;
         this.nome = nome;
-        this.email = email;
+        this.numTelefone = numTelefone;
         this.CPF = CPF;
         this.dataNascimento = dataNascimento;
         this.responsavel = responsavel;
@@ -68,12 +68,12 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getNumTelefone() {
+        return numTelefone;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNumTelefone(String numTelefone) {
+        this.numTelefone = numTelefone;
     }
 
     public String getCPF() {

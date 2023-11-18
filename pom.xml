@@ -14,7 +14,7 @@
 	<name>controledevacinasapp</name>
 	<description>API REST para controlar a aplicação de vacinas entre a população brasileira. ect for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -33,7 +33,6 @@
 		 <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.22</version>
 			<scope>runtime</scope>
 		</dependency>
 

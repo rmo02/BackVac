@@ -25,13 +25,22 @@ public class Responsavel {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
 
     public List<Usuario> getUsuarios() {
         return usuarios;
@@ -49,7 +58,10 @@ public class Responsavel {
     private String nome;
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String cpf;
+
+    @Column(nullable = false)
+    private String endereco;
 
     // Relacionamento com Paciente
     @OneToMany(mappedBy = "responsavel")

@@ -22,9 +22,8 @@ public class UsuarioDTO {
     @Size(max = 200)
     private String nome;
 
-    @NotBlank(message = "Digite um email")
-    @Email(message = "Digite um email válido")
-    private String email;
+    @NotBlank(message = "Digite um telefone")
+    private String numTelefone;
 
     @NotBlank(message = "Digite um CPF")
     @CPF(message = "Por favor, Digite um CPF válido.")
@@ -36,9 +35,9 @@ public class UsuarioDTO {
 
     public UsuarioDTO() {}
 
-    public UsuarioDTO(String nome, String email, String CPF, LocalDate dataNascimento, Long responsavelId) {
+    public UsuarioDTO(String nome, String numTelefone, String CPF, LocalDate dataNascimento, Long responsavelId) {
         this.nome = nome;
-        this.email = email;
+        this.numTelefone = numTelefone;
         this.CPF = CPF;
         this.dataNascimento = dataNascimento;
         this.responsavelId = responsavelId;
@@ -49,7 +48,7 @@ public class UsuarioDTO {
         usuario.setId(id);
 
         usuario.setNome(nome);
-        usuario.setEmail(email);
+        usuario.setNumTelefone(numTelefone);
         usuario.setCPF(CPF);
         usuario.setDataNascimento(dataNascimento);
 
@@ -80,12 +79,12 @@ public class UsuarioDTO {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getNumTelefone() {
+        return numTelefone;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNumTelefone(String numTelefone) {
+        this.numTelefone = numTelefone;
     }
 
     public String getCPF() {
@@ -125,11 +124,11 @@ public class UsuarioDTO {
         if (this == o) return true;
         if (!(o instanceof UsuarioDTO)) return false;
         UsuarioDTO that = (UsuarioDTO) o;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getNome(), that.getNome()) && Objects.equals(getEmail(), that.getEmail()) && Objects.equals(getCPF(), that.getCPF()) && Objects.equals(getDataNascimento(), that.getDataNascimento());
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getNome(), that.getNome()) && Objects.equals(getNumTelefone(), that.getNumTelefone()) && Objects.equals(getCPF(), that.getCPF()) && Objects.equals(getDataNascimento(), that.getDataNascimento());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getNome(), getEmail(), getCPF(), getDataNascimento());
+        return Objects.hash(getId(), getNome(), getNumTelefone(), getCPF(), getDataNascimento());
     }
 }
