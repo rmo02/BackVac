@@ -1,5 +1,7 @@
 package com.zup.desafio.controledevacinasapp.entity;
 
+import javax.persistence.Table;
+
 public class AuthResponse {
     private String username;
     private String token;
